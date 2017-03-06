@@ -42,9 +42,18 @@ describe('BankAccount', function() {
 
   describe('#withdraw', function() {
 
+    beforeEach(function() {
+      spyOn(bankStatement, 'addTransaction');
+    });
+
     it('should decrease the balance', function() {
       bankAccount.withdraw(500.00);
       expect(bankAccount.balance).toEqual(-500.00);
+    });
+
+    it('should add transaction to the statement', function() {
+      bankAccount.withdraw(500.00);
+      expect(bankAccount.statement.addTransaction).toHaveBeenCalled();
     });
 
   });

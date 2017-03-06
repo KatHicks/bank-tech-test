@@ -23,4 +23,9 @@ describe('Features', function() {
     expect(nationwide.viewStatement()).toContain("06/03/2017");
   });
 
+  it('date of withdrawal is recorded', function() {
+    nationwide.withdraw(500.00);
+    expect(nationwide.viewStatement()).toContain("06/03/2017");
+  });
+
 });

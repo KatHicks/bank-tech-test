@@ -12,6 +12,7 @@
     },
     withdraw: function(amount){
       this.balance -= amount;
+      this.statement.addTransaction(-amount);
     },
     viewStatement: function(){
       return this.statement.display();
