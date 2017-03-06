@@ -7,4 +7,8 @@ describe('Transaction', function() {
     transaction = new Transaction();
   });
 
+  it('should be a defined object', function() {
+    expect(transaction instanceof(Transaction)).toBe(true);
+  });
+
 });
