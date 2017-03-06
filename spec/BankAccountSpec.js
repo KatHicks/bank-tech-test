@@ -14,4 +14,12 @@ describe('BankAccount', function() {
     expect(bankAccount.balance).toBe(100.00);
   });
 
+  it('should have a statement property', function() {
+    expect(bankAccount.statement).toBeDefined();
+  });
+
+  it('should have the correct statement property', function() {
+    expect(bankAccount.statement).toBe(bankStatement);
+  });
+
 });

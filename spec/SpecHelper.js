@@ -19,7 +19,7 @@ beforeEach(function() {
 
   transactionHistory = new TransactionHistory(transactions);
   bankStatement      = new BankStatement(transactionHistory);
-  bankAccount        = new BankAccount(100.00);
+  bankAccount        = new BankAccount(100.00, bankStatement);
 });
 
 afterEach(function () {
