@@ -3,6 +3,7 @@ var yesterday;
 var transactions;
 var transactionHistory;
 var bankStatement;
+var bankAccount;
 
 beforeEach(function() {
   today = new Date(2017, 2, 6);
@@ -17,8 +18,8 @@ beforeEach(function() {
   ];
 
   transactionHistory = new TransactionHistory(transactions);
-
-  bankStatement = new BankStatement(transactionHistory);
+  bankStatement      = new BankStatement(transactionHistory);
+  bankAccount        = new BankAccount();
 });
 
 afterEach(function () {
