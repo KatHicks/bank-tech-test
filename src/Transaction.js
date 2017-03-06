@@ -1,7 +1,7 @@
 (function(exports) {
 
-  function Transaction() {
-
+  function Transaction(amount) {
+    this.amount = amount;
   }
 
   exports.Transaction = Transaction;
