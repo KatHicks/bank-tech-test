@@ -19,3 +19,12 @@ date       || credit  || debit  || balance
 13/01/2012 || 2000.00 ||        || 3000.00
 10/01/2012 || 1000.00 ||        || 1000.00
 ```
+
+### Domain Model
+
+Below is the domain model for my bank programme developed before implementation:
+  * It aims to separate concerns in line with good object-oriented design
+  * It involves delegation from the primary BankAccount object down to lower objects
+  * It also attempted to guide my initial implementation with consideration of the properties and their basic data types
+
+![Alt text](/assets/domainModel.png?raw=true "Optional Title")
