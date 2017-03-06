@@ -13,7 +13,7 @@ describe('Transaction', function() {
 
   afterEach(function () {
     jasmine.clock().uninstall();
-});
+  });
 
   it('should be a defined object', function() {
     expect(transaction instanceof(Transaction)).toBe(true);
