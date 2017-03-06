@@ -1,7 +1,7 @@
 (function(exports) {
 
-  function BankStatement() {
-
+  function BankStatement(history) {
+    this.history = history;
   }
 
   exports.BankStatement = BankStatement;
