@@ -34,4 +34,9 @@ describe('Features', function() {
     expect(nationwide.viewStatement()).toContain(headers);
   });
 
+  it('bank statement prints transaction amount and date', function() {
+    nationwide.deposit(1000.00);
+    expect(nationwide.viewStatement()).toContain("1000.00");
+  });
+
 });

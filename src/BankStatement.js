@@ -14,6 +14,8 @@
       var display = HEADERS + '\n';
       this.history.transactions.forEach(function(element) {
         display += formatDate(element.date);
+        display += '  || ';
+        display += element.amount.toFixed(2);
       });
       return display;
     }
