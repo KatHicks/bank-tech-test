@@ -29,4 +29,11 @@ describe('BankAccount', function() {
     });
   });
 
+  describe('#withdraw', function() {
+    it('should decrease the balance', function() {
+      bankAccount.withdraw(500.00);
+      expect(bankAccount.balance).toEqual(-500.00);
+    });
+  });
+
 });

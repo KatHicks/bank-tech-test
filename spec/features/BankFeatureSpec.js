@@ -13,4 +13,9 @@ describe('Features', function() {
     expect(nationwide.balance).toEqual(1000.00);
   });
 
+  it('client can make a withdrawal of 500.00', function() {
+    nationwide.withdraw(500.00);
+    expect(nationwide.balance).toEqual(-500.00);
+  });
+
 });
