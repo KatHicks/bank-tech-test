@@ -4,10 +4,14 @@ describe('Features', function() {
 
   var nationwide;
   var headers;
+  var date;
+  var amount;
 
   beforeEach(function() {
     nationwide = new BankAccount();
-    headers = "date       || credit  || debit  || balance"
+    headers    = "date       || credit  || debit  || balance"
+    date       = "06/03/2017"
+    amount     = "1000.00"
   });
 
   it('client can make a deposit of 1000.00', function() {
@@ -22,12 +26,12 @@ describe('Features', function() {
 
   it('date of deposit is recorded', function() {
     nationwide.deposit(1000.00);
-    expect(nationwide.viewStatement()).toContain("06/03/2017");
+    expect(nationwide.viewStatement()).toContain(date);
   });
 
   it('date of withdrawal is recorded', function() {
     nationwide.withdraw(500.00);
-    expect(nationwide.viewStatement()).toContain("06/03/2017");
+    expect(nationwide.viewStatement()).toContain(date);
   });
 
   it('client can print her bank statement', function() {
@@ -36,7 +40,7 @@ describe('Features', function() {
 
   it('bank statement prints transaction amount and date', function() {
     nationwide.deposit(1000.00);
-    expect(nationwide.viewStatement()).toContain("1000.00");
+    expect(nationwide.viewStatement()).toContain(amount);
   });
 
 });
