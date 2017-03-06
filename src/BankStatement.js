@@ -1,5 +1,7 @@
 (function(exports) {
 
+  var HEADERS = 'date       || credit  || debit  || balance';
+
   function BankStatement(history = new TransactionHistory()) {
     this.history = history;
   }
@@ -9,7 +11,7 @@
       this.history.addTransaction(amount);
     },
     display: function(){
-      var display = "";
+      var display = HEADERS + '\n';
       this.history.transactions.forEach(function(element) {
         display += formatDate(element.date);
       });
