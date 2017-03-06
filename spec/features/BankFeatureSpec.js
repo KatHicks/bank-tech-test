@@ -18,4 +18,9 @@ describe('Features', function() {
     expect(nationwide.balance).toEqual(-500.00);
   });
 
+  it('date of deposit is recorded', function() {
+    nationwide.deposit(1000.00);
+    expect(nationwide.viewStatement()).toContain("06/03/2017");
+  });
+
 });

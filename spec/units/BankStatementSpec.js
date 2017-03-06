@@ -14,4 +14,28 @@ describe('BankStatement', function() {
     expect(bankStatement.history).toBe(transactionHistory);
   });
 
+  describe('#addTransaction', function() {
+
+    beforeEach(function() {
+      spyOn(transactionHistory, 'addTransaction');
+    });
+
+    it('should add transaction to the history', function() {
+      bankStatement.addTransaction(1000.00);
+      expect(bankStatement.history.addTransaction).toHaveBeenCalled();
+    });
+  });
+
+  describe('#display', function() {
+
+    beforeEach(function() {
+      spyOn(transactionHistory, 'addTransaction');
+    });
+
+    it('should add transaction to the history', function() {
+      bankStatement.addTransaction(1000.00);
+      expect(bankStatement.history.addTransaction).toHaveBeenCalled();
+    });
+  });
+
 });
