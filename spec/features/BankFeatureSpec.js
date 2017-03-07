@@ -10,7 +10,7 @@ describe('Features', function() {
   beforeEach(function() {
     nationwide = new BankAccount();
     headers    = "date       || credit  || debit  || balance"
-    date       = "06/03/2017"
+    date       = "07/03/2017"
     amount     = "1000.00"
   });
 

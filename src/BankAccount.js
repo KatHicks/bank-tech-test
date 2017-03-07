@@ -8,11 +8,11 @@
   BankAccount.prototype = {
     deposit: function(amount){
       this.balance += amount;
-      this.statement.addTransaction(amount);
+      this.statement.addTransaction(amount, this.balance);
     },
     withdraw: function(amount){
       this.balance -= amount;
-      this.statement.addTransaction(-amount);
+      this.statement.addTransaction(-amount, this.balance);
     },
     viewStatement: function(){
       return this.statement.display();

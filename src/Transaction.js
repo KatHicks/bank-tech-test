@@ -1,7 +1,8 @@
 (function(exports) {
 
-  function Transaction(amount, date = new Date()) {
+  function Transaction(amount, current_balance, date = new Date()) {
     this.amount = amount;
+    this.current_balance = current_balance;
     this.date = date;
   }
 

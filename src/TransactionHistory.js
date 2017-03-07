@@ -5,8 +5,8 @@
   }
 
   TransactionHistory.prototype = {
-    addTransaction: function(amount){
-      var transaction = new Transaction(amount);
+    addTransaction: function(amount, balance){
+      var transaction = new Transaction(amount, balance);
       this.transactions.push(transaction);
     }
   };

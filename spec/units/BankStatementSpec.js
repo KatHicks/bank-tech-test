@@ -28,13 +28,25 @@ describe('BankStatement', function() {
 
   describe('#display', function() {
 
+    var headers;
+    var amount;
+
     beforeEach(function() {
-      spyOn(transactionHistory, 'addTransaction');
+      headers    = "date       || credit  || debit  || balance"
+      amount     = "1000.00"
     });
 
-    it('should add transaction to the history', function() {
-      bankStatement.addTransaction(1000.00);
-      expect(bankStatement.history.addTransaction).toHaveBeenCalled();
+    it('should display the headers', function() {
+      expect(bankStatement.display()).toContain(headers);
+    });
+
+    it('should display the date in the correct format', function() {
+      expect(bankStatement.display()).toContain("07/03/2017");
+    });
+
+    it('should display the correct transaction amount', function() {
+      bankStatement.addTransaction(1000.00, 1000.00)
+      expect(bankStatement.display()).toContain(amount);
     });
   });
 

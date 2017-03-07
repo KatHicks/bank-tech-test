@@ -7,8 +7,8 @@
   }
 
   BankStatement.prototype = {
-    addTransaction: function(amount){
-      this.history.addTransaction(amount);
+    addTransaction: function(amount, balance){
+      this.history.addTransaction(amount, balance);
     },
     display: function(){
       var display = HEADERS + '\n';
@@ -16,6 +16,9 @@
         display += formatDate(element.date);
         display += '  || ';
         display += element.amount.toFixed(2);
+        display += ' || ';
+        display += element.current_balance;
+        display += '\n';
       });
       return display;
     }
