@@ -28,3 +28,21 @@ Below is the domain model for my bank programme developed before implementation:
   * It also attempted to guide my initial implementation with consideration of the properties and their basic data types
 
 ![Alt text](/assets/domainModel.png?raw=true "Optional Title")
+
+Made one small minor ammendment to this planned domain model during the development, which was adding a `this.current_balance` property to the `Transaction` object
+
+### Process
+
+* Started the process by working through the unit specifications.
+  * Added a `TransactionSpec.js` file and tested that the object existed, could be instantiated and had the intended properties with the correct values
+  * Repeated this process for `TransactionHistory`; creating a spec file, and testing for all the necessary properties
+  * Then repeated again for `BankStatement` and `BankAccount`
+* Next started implementing the features which was writing the methods
+
+### Reflections
+
+* Found splitting out the printing of a bank statement into small testable chunks quite difficult - was quite a mammoth task
+* Enjoyed learning about how to stub time in Jasmine and also figuring out it's matchers a bit more
+  * Was a bit disappointed to realise that the number of built-in matchers didn't quite match up with RSpec - on which am assuming Jasmine was modelled
+  * For example: Jasmine doesn't have a `change.by(x)` matcher in the same way that RSpec does
+* Was also a bit of a shame that had to restructure by domain model halfway through - realised that calculating the current balance when printing each new line was not really the responsibility of the `BankStatement` object and also could be quite cumbersome if you had 100s of lines in the statement
