@@ -15,9 +15,19 @@
       this.history.transactions.forEach(function(element) {
         display += formatDate(element.date);
         display += '  || ';
-        display += element.amount.toFixed(2);
-        display += ' || ';
-        display += element.current_balance;
+        if (element.amount > 0) {
+          display += element.amount.toFixed(2);
+          display += ' || ';
+          display += '      ';
+          display += ' || ';
+        }
+        if (element.amount < 0) {
+          display += '       ';
+          display += ' || ';
+          display += Math.abs(element.amount).toFixed(2);
+          display += ' || ';
+        }
+        display += element.current_balance.toFixed(2);
         display += '\n';
       });
       return display;

@@ -13,8 +13,8 @@ beforeEach(function() {
   jasmine.clock().mockDate();
 
   transactions = [
-    new Transaction(1000.00, yesterday),
-    new Transaction(2000.00, today)
+    new Transaction(1000.00, 1000.00, yesterday),
+    new Transaction(2000.00, 3000.00, today)
   ];
 
   transactionHistory = new TransactionHistory(transactions);

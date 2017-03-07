@@ -41,7 +41,7 @@ describe('BankStatement', function() {
     });
 
     it('should display the date in the correct format', function() {
-      expect(bankStatement.display()).toContain("07/03/2017");
+      expect(bankStatement.display()).toContain("05/03/2017");
     });
 
     it('should display the correct transaction amount', function() {
