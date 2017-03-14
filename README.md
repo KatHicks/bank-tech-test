@@ -1,6 +1,8 @@
 # Practice Technical Test: Bank
 ### Makers Academy Week 10
 
+[![Code Climate](https://codeclimate.com/github/KatHicks/bank-tech-test/badges/gpa.svg)](https://codeclimate.com/github/KatHicks/bank-tech-test)
+
 ### Instructions
 
 **Requirements**
