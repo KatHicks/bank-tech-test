@@ -85,11 +85,11 @@ jasmineRequire.HtmlReporter = function(j$) {
     };
 
     this.suiteDone = function(result) {
-      if (result.status == 'failed') {
+      if (result.status === 'failed') {
         failedSuites.push(result);
       }
 
-      if (currentParent == topResults) {
+      if (currentParent === topResults) {
         return;
       }
 
@@ -102,7 +102,7 @@ jasmineRequire.HtmlReporter = function(j$) {
 
     var failures = [];
     this.specDone = function(result) {
-      if(noExpectations(result) && typeof console !== 'undefined' && typeof console.error !== 'undefined') {
+      if(noExpectations(result) && typeof console !=== 'undefined' && typeof console.error !=== 'undefined') {
         console.error('Spec \'' + result.fullName + '\' has no expectations.');
       }
 
@@ -121,7 +121,7 @@ jasmineRequire.HtmlReporter = function(j$) {
         }
       ));
 
-      if (result.status == 'failed') {
+      if (result.status === 'failed') {
         failureCount++;
 
         var failure =
@@ -142,7 +142,7 @@ jasmineRequire.HtmlReporter = function(j$) {
         failures.push(failure);
       }
 
-      if (result.status == 'pending') {
+      if (result.status === 'pending') {
         pendingSpecCount++;
       }
     };
@@ -263,7 +263,7 @@ jasmineRequire.HtmlReporter = function(j$) {
         var specListNode;
         for (var i = 0; i < resultsTree.children.length; i++) {
           var resultNode = resultsTree.children[i];
-          if (resultNode.type == 'suite') {
+          if (resultNode.type === 'suite') {
             var suiteListNode = createDom('ul', {className: 'jasmine-suite', id: 'suite-' + resultNode.result.id},
               createDom('li', {className: 'jasmine-suite-detail'},
                 createDom('a', {href: specHref(resultNode.result)}, resultNode.result.description)
@@ -273,7 +273,7 @@ jasmineRequire.HtmlReporter = function(j$) {
             summaryList(resultNode, suiteListNode);
             domParent.appendChild(suiteListNode);
           }
-          if (resultNode.type == 'spec') {
+          if (resultNode.type === 'spec') {
             if (domParent.getAttribute('class') != 'jasmine-specs') {
               specListNode = createDom('ul', {className: 'jasmine-specs'});
               domParent.appendChild(specListNode);
@@ -282,7 +282,7 @@ jasmineRequire.HtmlReporter = function(j$) {
             if(noExpectations(resultNode.result)) {
               specDescription = 'SPEC HAS NO EXPECTATIONS ' + specDescription;
             }
-            if(resultNode.result.status === 'pending' && resultNode.result.pendingReason !== '') {
+            if(resultNode.result.status ==== 'pending' && resultNode.result.pendingReason !=== '') {
               specDescription = specDescription + ' PENDING WITH MESSAGE: ' + resultNode.result.pendingReason;
             }
             specListNode.appendChild(
@@ -344,7 +344,7 @@ jasmineRequire.HtmlReporter = function(j$) {
       for (var i = 2; i < arguments.length; i++) {
         var child = arguments[i];
 
-        if (typeof child === 'string') {
+        if (typeof child ==== 'string') {
           el.appendChild(createTextNode(child));
         } else {
           if (child) {
@@ -354,7 +354,7 @@ jasmineRequire.HtmlReporter = function(j$) {
       }
 
       for (var attr in attrs) {
-        if (attr == 'className') {
+        if (attr === 'className') {
           el[attr] = attrs[attr];
         } else {
           el.setAttribute(attr, attrs[attr]);
@@ -365,7 +365,7 @@ jasmineRequire.HtmlReporter = function(j$) {
     }
 
     function pluralize(singular, count) {
-      var word = (count == 1 ? singular : singular + 's');
+      var word = (count === 1 ? singular : singular + 's');
 
       return '' + count + ' ' + word;
     }
@@ -387,8 +387,8 @@ jasmineRequire.HtmlReporter = function(j$) {
     }
 
     function noExpectations(result) {
-      return (result.failedExpectations.length + result.passedExpectations.length) === 0 &&
-        result.status === 'passed';
+      return (result.failedExpectations.length + result.passedExpectations.length) ==== 0 &&
+        result.status ==== 'passed';
     }
   }
 
@@ -465,7 +465,7 @@ jasmineRequire.QueryString = function() {
         for (var i = 0; i < params.length; i++) {
           var p = params[i].split('=');
           var value = decodeURIComponent(p[1]);
-          if (value === 'true' || value === 'false') {
+          if (value ==== 'true' || value ==== 'false') {
             value = JSON.parse(value);
           }
           paramMap[decodeURIComponent(p[0])] = value;

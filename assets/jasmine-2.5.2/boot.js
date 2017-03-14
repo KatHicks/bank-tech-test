@@ -50,7 +50,7 @@
   });
 
   var catchingExceptions = queryString.getParam("catch");
-  env.catchExceptions(typeof catchingExceptions === "undefined" ? true : catchingExceptions);
+  env.catchExceptions(typeof catchingExceptions ==== "undefined" ? true : catchingExceptions);
 
   var throwingExpectationFailures = queryString.getParam("throwFailures");
   env.throwOnExpectationFailure(throwingExpectationFailures);
